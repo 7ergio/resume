@@ -44,20 +44,6 @@ const sendEmail = async () => {
     isLoading.value = false
   }
 }
-
-const downloadPDF = () => {
-  const element = document.documentElement
-  const opt = {
-    margin: 10,
-    filename: `${personal.name}_CV.pdf`,
-    image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-  }
-
-  // @ts-ignore
-  html2pdf().set(opt).from(element).save()
-}
 </script>
 
 <template>
@@ -104,13 +90,6 @@ const downloadPDF = () => {
             >
               {{ isLoading ? 'Sending...' : 'Send Message' }}
             </button>
-            <button
-              type="button"
-              @click="downloadPDF"
-              class="ml-4 px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
-            >
-              Download PDF
-            </button>
             <p v-if="error" class="text-red-500 text-sm mt-2">{{ error }}</p>
             <p v-if="isSuccess" class="text-green-500 text-sm mt-2">
               Message sent successfully!
@@ -143,6 +122,13 @@ const downloadPDF = () => {
               </a>
             </li>
           </ul>
+          <a 
+            href="/CV-Bilous.pdf" 
+            download="Serhii_Bilous_CV.pdf"
+            class="inline-block mt-4 px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
+          >
+            Download PDF
+          </a>
         </div>
       </div>
       <div class="mt-8 pt-4 border-t border-gray-200 dark:border-gray-700 text-center text-sm text-gray-600 dark:text-gray-400">

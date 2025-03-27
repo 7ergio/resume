@@ -6,10 +6,11 @@ const { personal } = useResumeData()
   <div class="max-w-3xl mx-auto">
     <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
       <div class="w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
-        <!-- Placeholder for profile image -->
-        <div class="w-full h-full flex items-center justify-center text-gray-400">
-          <span class="i-heroicons-user-20-solid text-5xl"></span>
-        </div>
+        <img 
+          src="/profile.jpg" 
+          alt="Profile picture" 
+          class="w-full h-full object-cover"
+        />
       </div>
       <div>
         <h1 class="text-3xl font-bold mb-2">{{ personal.name }}</h1>

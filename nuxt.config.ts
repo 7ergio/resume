@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     '@vueuse/nuxt'
   ],
+
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
@@ -33,6 +34,7 @@ export default defineNuxtConfig({
       installPrompt: true,
     }
   },
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -42,11 +44,14 @@ export default defineNuxtConfig({
       }
     }
   },
+
   runtimeConfig: {
     public: {
       emailJsServiceId: process.env.EMAILJS_SERVICE_ID,
       emailJsTemplateId: process.env.EMAILJS_TEMPLATE_ID,
       emailJsPublicKey: process.env.EMAILJS_PUBLIC_KEY
     }
-  }
+  },
+
+  compatibilityDate: '2025-03-27'
 })

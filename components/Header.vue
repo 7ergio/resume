@@ -16,8 +16,7 @@ const links = [
   <header class="bg-white dark:bg-gray-800 shadow-sm">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <div>
-        <h1 class="text-xl font-bold">{{ personal.name }}</h1>
-        <p class="text-sm text-gray-600 dark:text-gray-300">{{ personal.title }}</p>
+        <p class="text-sm text-gray-600 dark:text-gray-300">&lt; FrontEnd Dev &#47;&gt;</p>
       </div>
       
       <nav class="flex items-center space-x-6">
