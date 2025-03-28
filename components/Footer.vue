@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import emailjs from '@emailjs/browser'
+
 const { personal } = useResumeData()
 const config = useRuntimeConfig()
 
@@ -11,6 +13,10 @@ const form = ref({
 const isLoading = ref(false)
 const isSuccess = ref(false)
 const error = ref('')
+
+onMounted(() => {
+  emailjs.init(config.public.emailJsPublicKey)
+})
 
 const sendEmail = async () => {
   if (!form.value.name || !form.value.email || !form.value.message) {
@@ -52,6 +58,9 @@ const sendEmail = async () => {
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <h3 class="text-lg font-semibold mb-4">Contact Me</h3>
+          <p class="text-gray-600 dark:text-gray-400 mb-4">
+            If you have any questions, suggestions, just want to drink beers or work together, feel free to send me a message.
+          </p>
           <form @submit.prevent="sendEmail" class="space-y-4">
             <div>
               <label for="name" class="block text-sm font-medium mb-1">Name</label>
@@ -92,7 +101,7 @@ const sendEmail = async () => {
             </button>
             <p v-if="error" class="text-red-500 text-sm mt-2">{{ error }}</p>
             <p v-if="isSuccess" class="text-green-500 text-sm mt-2">
-              Message sent successfully!
+              Awesome! The message sent successfully!
             </p>
           </form>
         </div>
@@ -127,7 +136,7 @@ const sendEmail = async () => {
             download="Serhii_Bilous_CV.pdf"
             class="inline-block mt-4 px-4 py-2 bg-gray-600 text-white rounded-md hover:bg-gray-700 transition-colors"
           >
-            Download PDF
+            Download CV
           </a>
         </div>
       </div>
