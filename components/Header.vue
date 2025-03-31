@@ -18,7 +18,8 @@ const links = [
   { name: 'Home', path: '/' },
   { name: 'Experience', path: '/experience' },
   { name: 'Skills', path: '/skills' },
-  { name: 'Extra Info', path: '/extra' }
+  { name: 'Extra Info', path: '/extra' },
+  { name: 'Contact', path: '/contact' }
 ]
 
 const toggleMenu = () => {
