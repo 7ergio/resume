@@ -7,6 +7,10 @@ export default defineNuxtConfig({
     '@vueuse/nuxt'
   ],
 
+  tailwindcss: {
+    configPath: '~/tailwind.config.js'
+  },
+
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
