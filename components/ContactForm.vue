@@ -55,12 +55,12 @@
   })
 
   const isLoading = ref(false)
-    const isSuccess = ref(false)
-    const error = ref('')
+  const isSuccess = ref(false)
+  const error = ref('')
 
-    onMounted(() => {
-      emailjs.init(config.public.emailJsPublicKey)
-    })
+  onMounted(() => {
+    emailjs.init(config.public.emailJsPublicKey)
+  })
   
   const sendEmail = async () => {
     if (!form.value.name || !form.value.email || !form.value.message) {
