@@ -9,6 +9,9 @@ module.exports = {
       './app.vue'
     ],
     theme: {
+      fontFamily: {
+        mono: ['"Courier New"', 'monospace']
+      },
       extend: {},
     },
     plugins: [],

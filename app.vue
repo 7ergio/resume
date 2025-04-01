@@ -12,6 +12,12 @@ useHead({
       name: 'description',
       content: 'A simple resume built with VitePress'
     }
+  ],
+  link: [
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=VT323&display=swap'
+    }
   ]
 })
 

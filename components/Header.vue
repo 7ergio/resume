@@ -35,7 +35,7 @@ onClickOutside(menuRef, () => {
   <header class="fixed top-0 left-0 right-0 z-50 bg-white dark:bg-gray-800 shadow-sm">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <div>
-        <NuxtLink to="/" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">&lt; FrontEnd Dev &#47;&gt;</NuxtLink>
+        <NuxtLink to="/" class="text-sm text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">&lt; FrontEndDev &#47;&gt;</NuxtLink>
       </div>
       
       <!-- Desktop Navigation -->

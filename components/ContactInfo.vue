@@ -8,7 +8,8 @@
           <p class="text-sm text-gray-500 dark:text-gray-400">{{ item.label }}</p>
           <a 
             v-if="item.href" 
-            :href="item.href" 
+            :href="item.href"
+            target="_blank" 
             class="font-medium hover:text-blue-600 dark:hover:text-blue-400"
           >
             {{ item.value }}
