@@ -37,15 +37,20 @@
           </template>
         </div>
         <TransitionGroup name="fade" tag="div" class="mt-2 space-y-2">
-          <p v-if="selectedSkills.length > allSkills.length / 4 && selectedSkills.length <= allSkills.length / 2" 
+          <p v-if="selectedSkills.length >= 1 && selectedSkills.length < allSkills.length / 4"
+            key="started"
+            class="text-blue-600 dark:text-blue-400 font-medium">
+            Great start! Keep going...
+          </p>
+          <p v-else-if="selectedSkills.length >= allSkills.length / 4 && selectedSkills.length < allSkills.length / 2"
             key="good"
             class="text-green-600 dark:text-green-400 font-medium">
             It's going pretty good! Looks promising
           </p>
-          <p v-if="selectedSkills.length > allSkills.length / 2" 
+          <p v-else-if="selectedSkills.length >= allSkills.length / 2"
             key="perfect"
-            class="text-green-600 dark:text-green-400 font-medium">
-            Looks like we have a perfect match!
+            class="text-purple-600 dark:text-purple-400 font-medium">
+            Perfect match! We'd work great together
           </p>
         </TransitionGroup>
       </div>
