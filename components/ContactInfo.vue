@@ -1,5 +1,5 @@
 <template>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="grid md:flex grid-cols-1 sm:grid-cols-2 md:justify-between gap-4">
       <div v-for="(item, index) in contactItems" :key="index" class="flex items-center space-x-3">
         <div class="p-2 rounded-full bg-gray-100 dark:bg-gray-700">
           <component :is="item.icon" class="h-5 w-5" />
