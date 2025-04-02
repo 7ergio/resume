@@ -59,7 +59,7 @@ export default defineNuxtConfig({
 
   routeRules: {
     // Enable client-side rendering for 404 page
-    '/**': { ssr: false }
+    '/[...slug]': { ssr: false }
   },
 
   compatibilityDate: '2025-03-27'

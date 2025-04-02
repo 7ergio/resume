@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="space-y-4">
+  <form @submit.prevent="handleSubmit" class="space-y-4" name="contact" method="POST" data-netlify="true">
     <div>
       <label for="name" class="block text-sm font-medium mb-1">Name</label>
       <input
