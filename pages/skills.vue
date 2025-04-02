@@ -31,9 +31,9 @@
     <div class="mb-8">
       <div class="text-center">
         <p class="mb-2">You've selected {{ selectedSkills.length }} skills</p>
-        <div class="flex justify-center items-center h-12">
+        <div class="flex justify-center items-center">
           <template v-if="selectedSkills.length > 0">
-            <HeartIcon class="h-3 w-3 text-red-500" :style="{ transform: `scale(${0.5 + selectedSkills.length/4})` }"/>
+            <span class="text-red-500 text-4xl animate-bounce" :style="{ fontSize: `${0.5 + selectedSkills.length/4}rem`, lineHeight: `${0.5 + selectedSkills.length/4}rem` }">❤️</span>
           </template>
         </div>
         <TransitionGroup name="fade" tag="div" class="mt-2 space-y-2">
@@ -60,10 +60,6 @@
 
 <script setup lang="ts">
 const { skills } = useResumeData()
-
-import { 
-    HeartIcon
-  } from '@heroicons/vue/24/outline'
 
 // Flatten all skills into one array
 const allSkills = computed(() => {
