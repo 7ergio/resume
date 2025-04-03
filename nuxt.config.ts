@@ -14,9 +14,12 @@ export default defineNuxtConfig({
   pwa: {
     registerType: 'autoUpdate',
     manifest: {
-      name: 'My CV',
-      short_name: 'CV',
+      name: 'Serhii Bilous - Frontend Developer',
+      short_name: 'Serhii CV',
       theme_color: '#ffffff',
+      background_color: '#ffffff',
+      orientation: 'portrait',
+      display: 'standalone', // Important for app-like experience
       icons: [
         {
           src: 'pwa-192x192.png',
@@ -32,7 +35,7 @@ export default defineNuxtConfig({
     },
     workbox: {
       navigateFallback: '/',
-      globPatterns: ['**/*.{js,css,html,png,svg,ico}']
+      globPatterns: ['**/*.{js,css,html,png,svg,ico,json}']
     },
     client: {
       installPrompt: true,
