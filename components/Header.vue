@@ -57,6 +57,7 @@ onClickOutside(menuRef, () => {
         <button 
           @click="toggleDark()" 
           class="hidden md:block p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
+          aria-label="Toggle dark mode"
         >
           <SunIcon v-if="isDark" class="h-5 w-5" />
           <MoonIcon v-else class="h-5 w-5" />

@@ -10,7 +10,9 @@
     "postinstall": "nuxt prepare",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -24,6 +26,8 @@
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.2",
     "@nuxtjs/tailwindcss": "^6.13.2",
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0",
     "@vite-pwa/nuxt": "^0.10.8",
     "@vitejs/plugin-vue": "^5.2.3",
     "@vue/test-utils": "^2.4.6",
