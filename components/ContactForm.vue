@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent="handleSubmit" class="space-y-4" name="contact" method="POST" data-netlify="true">
+  <form @submit.prevent="handleSubmit" class="space-y-4">
     <div>
       <label for="name" class="block text-sm font-medium mb-1">Name</label>
       <input
@@ -166,10 +166,9 @@ const handleSubmit = async () => {
       config.public.emailJsServiceId,
       config.public.emailJsTemplateId,
       {
-        from_name: form.name,
-        from_email: form.email,
-        message: form.message,
-        to_email: personal.email
+        name: form.name,
+        email: form.email,
+        message: form.message
       },
       config.public.emailJsPublicKey
     )
