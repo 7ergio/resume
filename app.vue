@@ -38,6 +38,10 @@ useHead({
     {
       rel: 'canonical',
       href: `https://serhii-cv.netlify.app${useRoute().path}`
+    },
+    {
+      rel: 'manifest',
+      href: '/manifest.webmanifest'
     }
   ],
   script: [

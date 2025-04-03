@@ -13,13 +13,16 @@ export default defineNuxtConfig({
 
   pwa: {
     registerType: 'autoUpdate',
+    includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
     manifest: {
       name: 'Serhii Bilous - Frontend Developer',
       short_name: 'Serhii CV',
+      description: 'Frontend Developer with expertise in Vue.js, JavaScript, and more.',
       theme_color: '#ffffff',
       background_color: '#ffffff',
+      display: 'standalone',
       orientation: 'portrait',
-      display: 'standalone', // Important for app-like experience
+      start_url: '/',
       icons: [
         {
           src: 'pwa-192x192.png',
@@ -30,6 +33,12 @@ export default defineNuxtConfig({
           src: 'pwa-512x512.png',
           sizes: '512x512',
           type: 'image/png'
+        },
+        {
+          src: 'pwa-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+          purpose: 'any maskable'
         }
       ]
     },
@@ -37,8 +46,9 @@ export default defineNuxtConfig({
       navigateFallback: '/',
       globPatterns: ['**/*.{js,css,html,png,svg,ico,json}']
     },
-    client: {
-      installPrompt: true,
+    devOptions: {
+      enabled: true,
+      type: 'module'
     }
   },
 
