@@ -7,7 +7,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -22,8 +25,12 @@
     "@iconify-json/heroicons": "^1.2.2",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "@vite-pwa/nuxt": "^0.10.8",
+    "@vitejs/plugin-vue": "^5.2.3",
+    "@vue/test-utils": "^2.4.6",
     "@vueuse/nuxt": "^13.0.0",
+    "happy-dom": "^17.4.4",
     "sass": "^1.86.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "vitest": "^3.1.1"
   }
 }
