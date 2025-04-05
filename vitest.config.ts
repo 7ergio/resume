@@ -7,7 +7,13 @@ export default defineConfig({
   test: {
     environment: 'happy-dom',
     globals: true,
-    exclude: ['**/node_modules/**', '**/dist/**', '.nuxt/**', '.output/**'],
+    exclude: [
+      '**/node_modules/**', 
+      '**/dist/**', 
+      '.nuxt/**', 
+      '.output/**',
+      'e2e/**' // To exclude Playwright tests
+    ],
   },
   resolve: {
     alias: {

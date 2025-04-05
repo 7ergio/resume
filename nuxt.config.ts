@@ -12,6 +12,7 @@ export default defineNuxtConfig({
   },
 
   pwa: {
+    disable: process.env.NODE_ENV !== 'production',
     registerType: 'autoUpdate',
     includeAssets: ['favicon.ico', 'apple-touch-icon.png'],
     manifest: {
@@ -44,7 +45,9 @@ export default defineNuxtConfig({
     },
     workbox: {
       navigateFallback: '/',
-      globPatterns: ['**/*.{js,css,html,png,svg,ico,json}']
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+      // Ignores any problematic patterns
+      globIgnores: ['**/node_modules/**/*', 'sw.js', 'workbox-*.js']
     },
     devOptions: {
       enabled: true,
