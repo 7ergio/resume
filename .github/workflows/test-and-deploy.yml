@@ -32,29 +32,3 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npm run e2e
-
-  deploy:
-    needs: [test, e2e]  # This ensures deploy only runs if both test jobs pass
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'  # Only deploy on push to main branch
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-          cache: 'npm'
-      - run: npm ci
-      - run: npm run build
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v2
-        with:
-          publish-dir: './.output/public'  # Adjust this based on your Nuxt output directory
-          production-branch: main
-          deploy-message: 'Deploy from GitHub Actions'
-          enable-pull-request-comment: true
-          enable-commit-comment: true
-          overwrites-pull-request-comment: true
-        env:
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        timeout-minutes: 1
