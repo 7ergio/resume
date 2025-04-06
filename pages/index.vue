@@ -14,7 +14,7 @@ import {
       <div class="w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
         <img 
           src="/profile.jpg" 
-          alt="Serhii Bilous FrontEnd Dev profile picture" 
+          alt="Serhii Bilous FrontEnd developer profile picture" 
           class="w-full h-full object-cover"
         />
       </div>
