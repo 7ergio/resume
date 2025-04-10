@@ -46,7 +46,8 @@
     EnvelopeIcon,
     PhoneIcon,
     MapPinIcon,
-    GlobeAltIcon
+    GlobeAltIcon,
+    CodeBracketIcon
   } from '@heroicons/vue/24/outline'
   import { ref } from 'vue'
 
@@ -80,6 +81,12 @@
       label: 'LinkedIn',
       value: 'My Profile',
       href: personal.linkedin
+    },
+    {
+      icon: CodeBracketIcon,
+      label: 'GitHub',
+      value: 'View the code',
+      href: personal.github
     }
   ]
 </script>

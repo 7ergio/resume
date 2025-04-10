@@ -8,6 +8,7 @@ interface ResumeData {
     phone: string
     email: string
     linkedin: string
+    github: string
     summary: string
   }
   experience: Array<{
