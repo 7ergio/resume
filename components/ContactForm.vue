@@ -52,7 +52,7 @@
     
     <button
       type="submit"
-      class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+      class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:bg-gray-200 transition-colors"
       :disabled="isLoading"
     >
       <span v-if="isLoading">Sending...</span>

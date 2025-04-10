@@ -1,4 +1,3 @@
-// e2e/navigation.spec.ts
 import { test, expect } from '@playwright/test'
 
 test('should navigate between pages', async ({ page }) => {
