@@ -26,7 +26,7 @@ test('shows errors for empty form submission', async ({ page }) => {
 
 test('validates form fields correctly', async ({ page }) => {
   const { nameInputField, emailInputField, textInputField, submitButton } = getPageElements(page)
-  
+
   // Filling the fields
   await nameInputField.fill('John Doe')
   await emailInputField.fill('john@doe')

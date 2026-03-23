@@ -59,6 +59,13 @@
 </template>
 
 <script setup lang="ts">
+useHead({
+  title: 'Skills - Serhii Bilous',
+  meta: [
+    { name: 'description', content: 'Technical skills of Serhii Bilous — Vue.js, Nuxt, JavaScript, TypeScript, and more.' }
+  ]
+})
+
 const { skills } = useResumeData()
 
 // Flatten all skills into one array

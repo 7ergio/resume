@@ -11,7 +11,7 @@
         class="w-full px-3 py-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
         :class="{ 'border-red-500': errors.name && touched.name }"
       >
-      <p v-if="errors.name && touched.name" class="mt-1 text-sm text-red-500">{{ errors.name }}</p>
+      <p v-if="errors.name && touched.name" class="mt-1 text-sm text-red-500" role="alert">{{ errors.name }}</p>
     </div>
     
     <div>
@@ -25,7 +25,7 @@
         class="w-full px-3 py-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
         :class="{ 'border-red-500': errors.email && touched.email }"
       >
-      <p v-if="errors.email && touched.email" class="mt-1 text-sm text-red-500">{{ errors.email }}</p>
+      <p v-if="errors.email && touched.email" class="mt-1 text-sm text-red-500" role="alert">{{ errors.email }}</p>
     </div>
     
     <div>
@@ -39,14 +39,14 @@
         class="w-full px-3 py-2 border rounded-md dark:bg-gray-700 dark:border-gray-600"
         :class="{ 'border-red-500': errors.message && touched.message }"
       ></textarea>
-      <p v-if="errors.message && touched.message" class="mt-1 text-sm text-red-500">{{ errors.message }}</p>
+      <p v-if="errors.message && touched.message" class="mt-1 text-sm text-red-500" role="alert">{{ errors.message }}</p>
     </div>
     
-    <div v-if="error" class="p-3 bg-red-100 text-red-700 rounded-md">
+    <div v-if="error" class="p-3 bg-red-100 text-red-700 rounded-md" role="alert">
       {{ error }}
     </div>
-    
-    <div v-if="isSuccess" class="p-3 bg-green-100 text-green-700 rounded-md">
+
+    <div v-if="isSuccess" class="p-3 bg-green-100 text-green-700 rounded-md" role="status" aria-live="polite">
       Message sent successfully!
     </div>
     

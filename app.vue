@@ -1,11 +1,14 @@
 <script setup lang="ts">
+const config = useRuntimeConfig()
+const siteUrl = config.public.siteUrl
+
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Serhii Bilous',
   jobTitle: 'Frontend Developer',
-  url: 'https://serhii-cv.netlify.app',
-  image: 'https://serhii-cv.netlify.app/profile.jpg',
+  url: siteUrl,
+  image: `${siteUrl}/profile.jpg`,
   sameAs: [
     'https://www.linkedin.com/in/bilous-serhii/'
   ],
@@ -26,8 +29,8 @@ useHead({
     // Open Graph tags for social sharing
     { property: 'og:title', content: 'Serhii Bilous - Frontend Developer' },
     { property: 'og:description', content: 'Frontend Developer with expertise in Vue.js, JavaScript, and more.' },
-    { property: 'og:image', content: 'https://serhii-cv.netlify.app/profile.jpg' },
-    { property: 'og:url', content: 'https://serhii-cv.netlify.app/' },
+    { property: 'og:image', content: `${siteUrl}/profile.jpg` },
+    { property: 'og:url', content: `${siteUrl}/` },
     { property: 'og:type', content: 'website' }
   ],
   link: [
@@ -37,7 +40,7 @@ useHead({
     },
     {
       rel: 'canonical',
-      href: `https://serhii-cv.netlify.app${useRoute().path}`
+      href: `${siteUrl}${useRoute().path}`
     },
     {
       rel: 'manifest',

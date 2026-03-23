@@ -1,3 +1,12 @@
+<script setup lang="ts">
+useHead({
+  title: 'Contact - Serhii Bilous',
+  meta: [
+    { name: 'description', content: 'Get in touch with Serhii Bilous — Frontend Developer based in Berlin.' }
+  ]
+})
+</script>
+
 <template>
     <div class="max-w-2xl mx-auto py-12 px-4">
       <h1 class="text-3xl font-bold mb-8 text-center">Contact Me</h1>

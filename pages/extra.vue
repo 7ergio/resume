@@ -1,5 +1,12 @@
 <script setup lang="ts">
 const { education, languages, hobbies } = useResumeData()
+
+useHead({
+  title: 'Extra - Serhii Bilous',
+  meta: [
+    { name: 'description', content: 'Education, languages, and hobbies of Serhii Bilous — Frontend Developer.' }
+  ]
+})
 </script>
 
 <template>

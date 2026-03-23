@@ -1,5 +1,12 @@
 <script setup lang="ts">
 const { experience } = useResumeData()
+
+useHead({
+  title: 'Experience - Serhii Bilous',
+  meta: [
+    { name: 'description', content: 'Professional experience of Serhii Bilous — Frontend Developer with 10+ years at Shape, BBG, and White Label.' }
+  ]
+})
 </script>
 
 <template>
