@@ -60,7 +60,7 @@ useHead({
 <template>
   <div class="flex flex-col min-h-screen">
     <Header />
-    <main class="container mx-auto px-4 py-8 pt-[100px]">
+    <main id="main-content" class="container mx-auto px-4 py-8 pt-[100px]">
       <NuxtPage />
     </main>
     <Footer />

@@ -12,10 +12,13 @@ import {
     <!-- Profile Header -->
     <div class="flex flex-col md:flex-row gap-8 items-center mb-8">
       <div class="w-32 h-32 rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
-        <img 
-          src="/profile.jpg" 
-          alt="Serhii Bilous FrontEnd developer profile picture" 
+        <img
+          src="/profile.jpg"
+          alt="Serhii Bilous FrontEnd developer profile picture"
           class="w-full h-full object-cover"
+          loading="lazy"
+          width="128"
+          height="128"
         />
       </div>
       <div>

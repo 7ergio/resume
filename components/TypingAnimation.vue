@@ -18,6 +18,8 @@ const typingElement = ref<HTMLElement | null>(null)
 const typingSpeed = 50
 const deletingSpeed = 30
 const pauseBetween = 1500
+const pauseBeforeNextPhrase = 500
+const initialDelay = 1000
 
 let timeoutId: ReturnType<typeof setTimeout> | null = null
 
@@ -47,13 +49,13 @@ onMounted(() => {
     } else if (isDeleting && charIndex === 0) {
       isDeleting = false
       phraseIndex = (phraseIndex + 1) % phrases.length
-      delay = 500
+      delay = pauseBeforeNextPhrase
     }
 
     timeoutId = setTimeout(type, delay)
   }
 
-  timeoutId = setTimeout(type, 1000)
+  timeoutId = setTimeout(type, initialDelay)
 })
 
 onUnmounted(() => {

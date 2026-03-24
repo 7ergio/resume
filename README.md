@@ -1,75 +1,97 @@
-# Nuxt Minimal Starter
+# Developer CV
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Personal portfolio and resume website built with Nuxt 3, Vue 3, and Tailwind CSS.
+
+**Live site:** https://serhii-cv.netlify.app
+
+## Tech Stack
+
+- **Framework:** Nuxt 3 + Vue 3
+- **Styling:** Tailwind CSS + SCSS, dark mode support
+- **Email:** EmailJS (contact form, no backend required)
+- **PWA:** Offline-capable via `@vite-pwa/nuxt`
+- **Testing:** Vitest (unit) + Playwright (e2e)
+- **CI/CD:** GitHub Actions → Netlify
 
 ## Setup
 
-Make sure to install dependencies:
+### 1. Install dependencies
 
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### 2. Configure environment variables
 
-Start the development server on `http://localhost:3000`:
+Copy `.env.example` to `.env` and fill in the values:
 
 ```bash
-# npm
+cp .env.example .env
+```
+
+| Variable | Description |
+|---|---|
+| `NUXT_PUBLIC_SITE_URL` | Full site URL, used for canonical links and Open Graph |
+| `EMAILJS_SERVICE_ID` | EmailJS service ID |
+| `EMAILJS_TEMPLATE_ID` | EmailJS template ID |
+| `EMAILJS_PUBLIC_KEY` | EmailJS public key |
+
+Get your EmailJS credentials at [emailjs.com](https://www.emailjs.com/).
+
+### 3. Start the dev server
+
+```bash
 npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+Opens at `http://localhost:3000`.
 
-Build the application for production:
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start dev server |
+| `npm run build` | Build for production |
+| `npm run generate` | Static site generation |
+| `npm run preview` | Preview production build |
+| `npm run unit` | Run unit tests (Vitest) |
+| `npm run unit:watch` | Run unit tests in watch mode |
+| `npm run e2e` | Run e2e tests (Playwright) |
+| `npm run e2e:ui` | Run e2e tests with UI |
+| `npm run test:all` | Run all tests |
+
+## Testing
+
+### Unit tests
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+npm run unit
 ```
 
-Locally preview production build:
+Tests live in `tests/` — covering components and composables.
+
+### E2E tests
 
 ```bash
-# npm
-npm run preview
+# Install Playwright browsers once
+npx playwright install
 
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+npm run e2e
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+E2E tests run against a local dev server on port 3000. Tests cover navigation and the contact form across Chromium, Firefox, and WebKit.
+
+## Project Structure
+
+```
+pages/          # Route pages (index, experience, skills, extra, contact)
+components/     # Reusable Vue components
+composables/    # useResumeData — loads resume.json
+public/data/    # resume.json — all resume content
+tests/          # Vitest unit tests
+e2e/            # Playwright e2e tests
+```
+
+## Deployment
+
+The site is deployed to Netlify. Set the environment variables in Netlify's site settings to match your `.env` file.

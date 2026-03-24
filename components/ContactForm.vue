@@ -189,7 +189,6 @@ const handleSubmit = async () => {
     setTimeout(() => isSuccess.value = false, 3000)
   } catch (err) {
     error.value = 'Failed to send message. Please try again later.'
-    console.error('EmailJS error:', err)
   } finally {
     isLoading.value = false
   }
